@@ -1,0 +1,101 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For Varsha 💖</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #ffd6e0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      background: white;
+      padding: 30px 20px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      width: 90%;
+      max-width: 350px;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 20px;
+      margin-bottom: 25px;
+    }
+
+    button {
+      padding: 14px 22px;
+      margin: 10px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #yesBtn {
+      background: #ff4d79;
+      color: white;
+    }
+
+    #noBtn {
+      background: #eee;
+      position: absolute;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .celebrate {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Varsha, will you be my Valentine? 💖</h1>
+
+    <button id="yesBtn">Yes 💕</button>
+    <button id="noBtn">No 😅</button>
+
+    <div id="result" class="hidden">
+      <h2>YAY! 🎉</h2>
+      <p>I knew it 😌❤️</p>
+    </div>
+  </div>
+
+  <script>
+    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noBtn");
+    const result = document.getElementById("result");
+
+    yesBtn.addEventListener("click", () => {
+      result.classList.remove("hidden");
+    });
+
+    // Works on both mobile (tap) + desktop (hover)
+    function moveButton() {
+      const x = Math.random() * 150 - 75;
+      const y = Math.random() * 150 - 75;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    }
+
+    noBtn.addEventListener("mouseover", moveButton);
+    noBtn.addEventListener("click", moveButton);
+    noBtn.addEventListener("touchstart", moveButton);
+  </script>
+
+</body>
+</html>
